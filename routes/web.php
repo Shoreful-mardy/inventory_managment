@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Demo\DemoController;
 use App\Http\Controllers\Pos\SupplierController;
+use App\Http\Controllers\Pos\CustomerController;
 use App\Http\Controllers\AdminController;
 
 
@@ -41,6 +42,12 @@ Route::controller(SupplierController::class)->group(function () {
     Route::get('/edit/supplier/{id}', 'EditSupplier')->name('edit.supplier');
     Route::post('/update/supplier', 'UpdateSupplier')->name('update.supplier');
     Route::get('/delete/supplier/{id}', 'DeleteSupplier')->name('delete.supplier');
+     
+});
+
+ // Manage Customer All Route 
+Route::controller(CustomerController::class)->group(function () {
+    Route::get('/all/customer', 'AllCustomer')->name('all.customer');
      
 });
 
