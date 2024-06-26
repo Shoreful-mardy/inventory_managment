@@ -36,6 +36,7 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('all.customer')}}">All Customers</a></li>
+                        <li><a href="{{ route('add.customer')}}">Add Customers</a></li>
                     </ul>
                 </li>
 

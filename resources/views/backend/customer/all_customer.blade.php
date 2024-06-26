@@ -22,7 +22,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                	<a href="{{ route('add.supplier') }}" class="btn btn-dark btn-rounded waves-effect waves-light" style=" float: right;">Add Customers</a> <br><br>
+                	<a href="{{ route('add.customer') }}" class="btn btn-dark btn-rounded waves-effect waves-light" style=" float: right;">Add Customers</a> <br><br>
 
                     <h4 class="card-title">All Customers Data </h4>
                     

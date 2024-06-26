@@ -14,4 +14,20 @@ class CustomerController extends Controller
         $customer = Customer::latest()->get();
         return view('backend.customer.all_customer',compact('customer'));
     }//End Method
+
+    public function AddCustomer(){
+        return view('backend.customer.add_customer');
+    }//End Method
+
+
+
+
+
+
+
+
+
+
+
+
 }

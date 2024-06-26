@@ -48,6 +48,7 @@ Route::controller(SupplierController::class)->group(function () {
  // Manage Customer All Route 
 Route::controller(CustomerController::class)->group(function () {
     Route::get('/all/customer', 'AllCustomer')->name('all.customer');
+    Route::get('/add/customer', 'AddCustomer')->name('add.customer');
      
 });
 
