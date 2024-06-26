@@ -34,7 +34,7 @@
                             <th>Name</th> 
                             <th>Image</th> 
                             <th>Email</th> 
-                            <th>Address</th> 
+                            <th>Mobile No</th> 
                             <th>Action</th>
                             
                         </thead>
@@ -50,10 +50,10 @@
                                 <img src="{{ asset($item->customer_image) }}" style=" width: 60px; height: 50px; ">
                              </td> 
                             <td> {{ $item->email }} </td> 
-                            <td> {{ $item->address }} </td> 
+                            <td> {{ $item->mobile_no }} </td> 
                             
                             <td>
-   <a href="{{ route('edit.supplier',$item->id ) }}" class="btn btn-info sm" title="Edit Data">  <i class="fas fa-edit"></i> </a>
+   <a href="{{ route('edit.customer',$item->id ) }}" class="btn btn-info sm" title="Edit Data">  <i class="fas fa-edit"></i> </a>
 
      <a href="{{ route('delete.supplier',$item->id ) }}" class="btn btn-danger sm" title="Delete Data" id="delete">  <i class="fas fa-trash-alt"></i> </a>
 
