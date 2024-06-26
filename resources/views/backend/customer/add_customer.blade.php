@@ -14,7 +14,7 @@
             
 
 
-     <form method="post" action="{{ route('store.supplier') }}" id="myForm" >
+     <form method="post" action="{{ route('store.customer') }}" id="myForm" enctype="multipart/form-data">
                 @csrf
 
             <div class="row mb-3">
@@ -52,7 +52,7 @@
             <div class="row mb-3">
                 <label for="example-text-input" class="col-sm-2 col-form-label">Customer Image </label>
                 <div class="col-sm-10 form-group">
-       <input name="customer_image" class="form-control" type="file"  id="image">
+             <input name="customer_image" class="form-control" type="file"  id="image">
                 </div>
             </div>
             <!-- end row -->
