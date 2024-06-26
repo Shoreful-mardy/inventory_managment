@@ -25,6 +25,7 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('all.supplier')}}">All Suppliers</a></li>
+                        <li><a href="{{ route('add.supplier') }}">Add Suppliers</a></li>
                     </ul>
                 </li>
 

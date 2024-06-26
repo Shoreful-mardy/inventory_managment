@@ -36,6 +36,8 @@ Route::controller(AdminController::class)->group(function () {
  // Manage Suppliers All Route 
 Route::controller(SupplierController::class)->group(function () {
     Route::get('/all/supplier', 'AllSupplier')->name('all.supplier');
+    Route::get('/add/supplier', 'AddSupplier')->name('add.supplier');
+    Route::post('/store/supplier', 'StoreSupplier')->name('store.supplier');
      
 });
 
