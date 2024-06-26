@@ -1,7 +1,7 @@
 @extends('admin.admin_master')
 @section('admin')
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
  <div class="page-content">
                     <div class="container-fluid">
 
@@ -51,9 +51,9 @@
                             <td> {{ $item->address }} </td> 
                             
                             <td>
-   <a href="" class="btn btn-info sm" title="Edit Data">  <i class="fas fa-edit"></i> </a>
+   <a href="{{ route('edit.supplier',$item->id ) }}" class="btn btn-info sm" title="Edit Data">  <i class="fas fa-edit"></i> </a>
 
-     <a href="" class="btn btn-danger sm" title="Delete Data" id="delete">  <i class="fas fa-trash-alt"></i> </a>
+     <a href="{{ route('delete.supplier',$item->id ) }}" class="btn btn-danger sm" title="Delete Data" id="delete">  <i class="fas fa-trash-alt"></i> </a>
 
                             </td>
                            
