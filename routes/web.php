@@ -60,6 +60,8 @@ Route::controller(CustomerController::class)->group(function () {
  // Manage Units All Route 
 Route::controller(UnitController::class)->group(function () {
     Route::get('/all/units', 'AllUnits')->name('all.units');
+    Route::get('/add/units', 'AddUnits')->name('add.units');
+    Route::post('/store/units', 'StoreUnits')->name('store.units');
      
 });
 

@@ -15,6 +15,26 @@ class UnitController extends Controller
         return view('backend.unit.all_unit',compact('unit'));
     }//End Method
 
+    public function AddUnits(){
+        return view('backend.unit.add_unit');
+    }//End Method
+
+    public function StoreUnits(Request $request){
+
+        Unit::insert([
+            'name' => $request->name,
+            'created_by' => Auth::user()->id,
+            'created_at' => Carbon::now(),
+
+        ]);
+        $notification = array(
+            'message' => 'Unit Added Successfully', 
+            'alert-type' => 'success'
+        );
+        return redirect()->route('all.units')->with($notification);
+
+    }//End Method
+
 
 
 
