@@ -30,9 +30,9 @@
                     <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                         <thead>
                         <tr>
-                            <th>Sl</th>
+                            <th width="5%">Sl</th>
                             <th>Name</th> 
-                            <th>Action</th>
+                            <th width="20%" >Action</th>
                             
                         </thead>
 
@@ -45,7 +45,7 @@
                             <td> {{ $item->name }} </td> 
                             
                             <td>
-   <a href="{{ route('edit.supplier',$item->id ) }}" class="btn btn-info sm" title="Edit Data">  <i class="fas fa-edit"></i> </a>
+   <a href="{{ route('edit.units',$item->id ) }}" class="btn btn-info sm" title="Edit Data">  <i class="fas fa-edit"></i> </a>
 
      <a href="{{ route('delete.supplier',$item->id ) }}" class="btn btn-danger sm" title="Delete Data" id="delete">  <i class="fas fa-trash-alt"></i> </a>
 
