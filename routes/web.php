@@ -7,6 +7,7 @@ use App\Http\Controllers\Pos\CustomerController;
 use App\Http\Controllers\Pos\UnitController;
 use App\Http\Controllers\Pos\CategoryController;
 use App\Http\Controllers\Pos\ProductController;
+use App\Http\Controllers\Pos\PurchaseController;
 use App\Http\Controllers\AdminController;
 
 
@@ -90,6 +91,11 @@ Route::controller(ProductController::class)->group(function () {
     Route::post('/update/product', 'UpdateProduct')->name('update.product');
     Route::get('/delete/product/{id}', 'DeleteProduct')->name('delete.product');
      
+});
+
+ // Manage Product All Route 
+Route::controller(PurchaseController::class)->group(function () {
+    Route::get('/all/purchase', 'AllPurchase')->name('all.purchase');
 });
 
 
