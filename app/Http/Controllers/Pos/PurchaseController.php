@@ -24,6 +24,20 @@ class PurchaseController extends Controller
 
 
 
+    public function AddPurchase(){
+
+
+        $supplier = Supplier::all();
+        $unit = Unit::all();
+        $category = Category::all();
+
+
+        return view('backend.purchase.add_purchase',compact('supplier','unit','category'));
+
+    }//End Method
+
+
+
 
 
 

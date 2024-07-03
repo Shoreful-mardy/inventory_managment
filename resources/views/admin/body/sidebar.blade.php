@@ -39,7 +39,7 @@
                         <li><a href="{{ route('all.customer')}}">Add Customers</a></li>
                     </ul>
                 </li>
-
+ 
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="fas fa-hand-lizard"></i>
@@ -80,7 +80,7 @@
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('all.purchase')}}">All Purchase</a></li>
-                        <li><a href="{{ route('add.product')}}">Add Product</a></li>
+                        <li><a href="{{ route('add.purchase')}}">Add Purchase</a></li>
                     </ul>
                 </li>
 
