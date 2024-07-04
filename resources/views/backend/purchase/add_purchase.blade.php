@@ -52,7 +52,7 @@
                     <div class="mb-3">
                     <label for="example-text-input" >Product Name</label>
                     <select id="product_id" name="product_id" class="form-select" aria-label="Default select example">
-                        <option selected="">Open this select Supplier</option>
+                        <option selected="">Open this select Product</option>
                         
                         </select>
                     </div>
@@ -104,5 +104,28 @@
     
 </script>
 
+<script type="text/javascript">
+    
+
+    $(function(){
+    	$(document).on('change', '#category_id',function() {
+    		var category_id = $(this).val();
+    		$.ajax({
+    			url:"{{ route('get-product') }}",
+    			type: "GET",
+    			data:{category_id:category_id},
+    			success:function(data){
+    				var html = '<option value=""> Select Category </option>';
+    				$.each(data,function(key,v){
+    					html += '<option value=" '+v.id+' ">  ' +v.name+ ' </option>';
+    				});
+
+    				$('#product_id').html(html);
+    			}
+    		})
+    	});
+    });
+    
+</script>
  
 @endsection 

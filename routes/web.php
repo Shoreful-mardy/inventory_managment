@@ -8,6 +8,7 @@ use App\Http\Controllers\Pos\UnitController;
 use App\Http\Controllers\Pos\CategoryController;
 use App\Http\Controllers\Pos\ProductController;
 use App\Http\Controllers\Pos\PurchaseController;
+use App\Http\Controllers\Pos\DefaultController;
 use App\Http\Controllers\AdminController;
 
 
@@ -93,10 +94,17 @@ Route::controller(ProductController::class)->group(function () {
      
 });
 
- // Manage Product All Route 
+ // Manage Purchase All Route 
 Route::controller(PurchaseController::class)->group(function () {
     Route::get('/all/purchase', 'AllPurchase')->name('all.purchase');
     Route::get('/add/purchase', 'AddPurchase')->name('add.purchase');
+
+});
+
+ // Default All Route 
+Route::controller(DefaultController::class)->group(function () {
+    Route::get('/get-category', 'GetCategory')->name('get-category');
+    Route::get('/get-product', 'GetProduct')->name('get-product');
 
 });
 
