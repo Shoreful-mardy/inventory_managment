@@ -8,7 +8,7 @@
 <div class="row">
 <div class="card">
     <div class="card-body">
-        <h4 class="card-title">Add Purchas</h4>
+        <h4 class="card-title">Add Purchase</h4>
         <br><br>
         <form class="needs-validation" novalidate="">
             <div class="row">
@@ -70,7 +70,47 @@
                 <button class="btn btn-primary" type="submit">Submit form</button>
             </div>
         </form>
-    </div>
+    </div> <!--End card-body-->
+<!---------------------------------------------------------------------------------->
+    <div class="card-body">
+    	<form method="" action="">
+    		@csrf
+    		<table class="table-sm table-bordered" width="100%" style="border-color:#ddd;">
+    			<thead>
+    				<tr>
+    					<th>Category</th>
+    					<th>Product Name</th>
+    					<th>Unit</th>
+    					<th>Unit Price</th>
+    					<th>Description</th>
+    					<th>Totel Price</th>
+    					<th>Action</th>
+    				</tr>
+    			</thead>
+    			<tbody id="addRow" class="addRow">
+
+    				
+    			</tbody>
+    			<tbody id="addRow" class="addRow">
+    				<tr>
+    					<td colspan="5"></td>
+    					<td>
+    						<input type="text" name="estimated_amount" value="0" id="estimated_amount" class="form-control estimated_amount" readonly style="background-color: #ddd;">
+    					</td>
+    					<td></td>
+    				</tr>
+    				
+    			</tbody>
+
+    		</table>
+    		<br>
+
+    		<div class="form-group">
+    			<button type="sumit" class="btn btn-info" id="storeButton">Purchase Store</button>
+    		</div>
+
+    	</form>
+    </div><!--End card-body-->
 </div>
 </div>
  
@@ -78,6 +118,48 @@
 
 </div>
 </div>
+
+
+
+<script id="document-templae" type="text/x-handlebars">
+	<tr class="delete_add_more_item)"  id="delete_add_more_item">
+	<input type="hidden" name="date[]" value="@{{date}}}">
+	<input type="hidden" name="parchase_no[]" value="@{{parchase_no}}}">
+	<input type="hidden" name="supplier_id[]" value="@{{supplier_id}}}">
+	
+
+	<td>
+		<input type="hidden" name="category_id[]" value="@{{category_id}}}">
+		@{{category_name}}
+	</td>
+
+	<td>
+		<input type="hidden" name="product_id[]" value="@{{product_id}}}">
+		@{{product_name}
+	</td>
+
+	<td>
+		<input type="number" min="1" class="form-control buying_qty text-right" name="buying_qty[]" value="">
+	</td>
+
+	<td>
+		<input type="number" class="form-control unit_price text-right" name="unit_price[]" value="">
+	</td>
+
+	<td>
+		<input type="text" class="form-control" name="description[]">
+	</td>
+
+	<td>
+		<input type="number" class="form-control buying_qty text-right" name="buying_price[]" value="0" readonly>
+	</td>
+
+	<td>
+		<i class="btn btn-danger btn-sm fas fa-window-close removeeventmore"></i>
+	</td>
+
+</tr>	
+</script>
 
 
 <script type="text/javascript">
