@@ -60,15 +60,11 @@
 
                 <div class="col-md-4">
                 	<label for="example-text-input" style="margin-top: 43px;" ></label>
-                    <input class="btn btn-secondary" type="submit" value="Add More">
+                    <i class="btn btn-secondary btn-rounded waves-effect waves-light fas fa-plus-circle addeventmore" > Add More</i>
                 </div>
 
 
             </div> <!-- End Row -->
-
-            <div>
-                <button class="btn btn-primary" type="submit">Submit form</button>
-            </div>
         </form>
     </div> <!--End card-body-->
 <!---------------------------------------------------------------------------------->
@@ -121,52 +117,16 @@
 
 
 
-<script id="document-templae" type="text/x-handlebars">
-	<tr class="delete_add_more_item)"  id="delete_add_more_item">
-	<input type="hidden" name="date[]" value="@{{date}}}">
-	<input type="hidden" name="parchase_no[]" value="@{{parchase_no}}}">
-	<input type="hidden" name="supplier_id[]" value="@{{supplier_id}}}">
-	
 
-	<td>
-		<input type="hidden" name="category_id[]" value="@{{category_id}}}">
-		@{{category_name}}
-	</td>
 
-	<td>
-		<input type="hidden" name="product_id[]" value="@{{product_id}}}">
-		@{{product_name}
-	</td>
 
-	<td>
-		<input type="number" min="1" class="form-control buying_qty text-right" name="buying_qty[]" value="">
-	</td>
-
-	<td>
-		<input type="number" class="form-control unit_price text-right" name="unit_price[]" value="">
-	</td>
-
-	<td>
-		<input type="text" class="form-control" name="description[]">
-	</td>
-
-	<td>
-		<input type="number" class="form-control buying_qty text-right" name="buying_price[]" value="0" readonly>
-	</td>
-
-	<td>
-		<i class="btn btn-danger btn-sm fas fa-window-close removeeventmore"></i>
-	</td>
-
-</tr>	
-</script>
 
 
 <script type="text/javascript">
     
 
     $(function(){
-    	$(document).on('change', '#supplier_id',function() {
+    	$(document).on('change','#supplier_id',function() {
     		var supplier_id = $(this).val();
     		$.ajax({
     			url:"{{ route('get-category') }}",
@@ -209,5 +169,98 @@
     });
     
 </script>
- 
+
+<script id="document-template" type="text/x-handlebars-template">
+     
+<tr class="delete_add_more_item" id="delete_add_more_item">
+        <input type="hidden" name="date[]" value="@{{date}}">
+        <input type="hidden" name="parchase_no[]" value="@{{parchase_no}}">
+        <input type="hidden" name="supplier_id[]" value="@{{supplier_id}}">
+   
+    <td>
+        <input type="hidden" name="category_id[]" value="@{{category_id}}">
+        @{{ category_name }}
+    </td>
+
+     <td>
+        <input type="hidden" name="product_id[]" value="@{{product_id}}">
+        @{{ product_name }}
+    </td>
+
+     <td>
+        <input type="number" min="1" class="form-control buying_qty text-right" name="buying_qty[]" value=""> 
+    </td>
+
+    <td>
+        <input type="number" class="form-control unit_price text-right" name="unit_price[]" value=""> 
+    </td>
+
+ <td>
+        <input type="text" class="form-control" name="description[]"> 
+    </td>
+
+     <td>
+        <input type="number" class="form-control buying_price text-right" name="buying_price[]" value="0" readonly> 
+    </td>
+
+     <td>
+        <i class="btn btn-danger btn-sm fas fa-window-close removeeventmore"></i>
+    </td>
+
+    </tr>
+
+</script>
+
+<script type="text/javascript">
+    
+    $(document).ready(function(){
+        $(document).on("click",".addeventmore", function (){
+            var date = $('#date').val();
+            var parchase_no = $('#parchase_no').val();
+            var supplier_id = $('#supplier_id').val();
+            var category_id = $('#category_id').val();
+            var category_name = $('#category_id').find('option:selected').text();
+            var product_id = $('#product_id').val();
+            var product_name = $('#product_id').find('option:selected').text();
+
+            if(date == ''){
+                $.notify("Date is Required" ,  {globalPosition: 'top right', className:'error' });
+                return false;
+            }
+            if (parchase_no == '') {
+                $.notify("Purchase No Is Required", {globalPosition: 'top right', className: 'error'});
+                return false;
+            }
+            if (supplier_id == '') {
+                $.notify("Supplier Is Required", {globalPosition: 'top right', className: 'error'});
+                return false;
+            }
+            if (category_id == '') {
+                $.notify("Category Is Required", {globalPosition: 'top right', className: 'error'});
+                return false;
+            }
+            if (product_id == '') {
+                $.notify("Product Field Is Required", {globalPosition: 'top right', className: 'error'});
+                return false;
+            }
+
+            var source = $("#document-template").html();
+            var tamplate = Handlebars.compile(source);
+            var data = {
+                date:date,
+                parchase_no:parchase_no,
+                supplier_id:supplier_id,
+                category_id:category_id,
+                product_id:product_id,
+                product_name:product_name,
+
+            };
+            var html = tamplate(data);
+            $("#addRow").append(html);
+
+        });
+    })
+
+</script>
+
 @endsection 
