@@ -251,6 +251,7 @@
                 parchase_no:parchase_no,
                 supplier_id:supplier_id,
                 category_id:category_id,
+                category_name:category_name,
                 product_id:product_id,
                 product_name:product_name,
 
