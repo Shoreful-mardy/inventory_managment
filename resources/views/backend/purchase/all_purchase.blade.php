@@ -48,12 +48,12 @@
                         	@foreach($allData as $key => $item)
                         <tr>
                             <td> {{ $key+1}} </td>
-                            <td> {{ $item->product_id }} </td> 
+                            <td> {{ $item['product']['name'] }} </td> 
                             <td> {{ $item->parchase_no }} </td> 
-                            <td> {{ $item->category_id }} </td> 
+                            <td> {{ $item['category']['name'] }} </td> 
                             <td> {{ $item->buying_qty }} </td> 
-                            <td> {{ $item->date }} </td> 
-                            <td> {{ $item->supplier_id }} </td> 
+                            <td> {{  date('d-m-Y',strtotime($item->date))  }} </td> 
+                            <td> {{ $item['supplier']['name'] }} </td> 
                             <td>
                                 <span class="btn btn-warning" >Pending</span> 
                             </td> 
