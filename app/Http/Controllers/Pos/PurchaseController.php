@@ -74,6 +74,18 @@ class PurchaseController extends Controller
     }//End Method
 
 
+    public function DeletePurchase($id){
+
+        Parchase::findOrFail($id)->delete();
+        $notification = array(
+        'message' => 'Purchase Item Deleted Successfully ', 
+        'alert-type' => 'success'
+        );
+        return redirect()->back()->with($notification);
+
+    }//End Method
+
+
 
 
 

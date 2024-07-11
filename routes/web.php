@@ -99,6 +99,7 @@ Route::controller(PurchaseController::class)->group(function () {
     Route::get('/all/purchase', 'AllPurchase')->name('all.purchase');
     Route::get('/add/purchase', 'AddPurchase')->name('add.purchase');
     Route::post('/purchase/store', 'PurchaseStore')->name('purchase.store');
+    Route::get('/delete/purchase/{id}', 'DeletePurchase')->name('delete.purchase');
 
 });
 
