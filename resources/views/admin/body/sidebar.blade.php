@@ -85,6 +85,17 @@
                     </ul>
                 </li>
 
+                <li>
+                    <a href="javascript: void(0);" class="has-arrow waves-effect">
+                        <i class="fas fa-layer-group"></i>
+                        <span>Manage Invoice</span>
+                    </a>
+                    <ul class="sub-menu" aria-expanded="false">
+                        <li><a href="{{ route('all.invoice')}}">All Invoice</a></li>
+                        <li><a href="{{ route('pending.purchase')}}">Approval Invoice</a></li>
+                    </ul>
+                </li>
+
 
 
                 

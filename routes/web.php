@@ -9,6 +9,7 @@ use App\Http\Controllers\Pos\CategoryController;
 use App\Http\Controllers\Pos\ProductController;
 use App\Http\Controllers\Pos\PurchaseController;
 use App\Http\Controllers\Pos\DefaultController;
+use App\Http\Controllers\Pos\InvoiceController;
 use App\Http\Controllers\AdminController;
 
 
@@ -106,10 +107,17 @@ Route::controller(PurchaseController::class)->group(function () {
 
 });
 
- // Default All Route 
+// Default All Route 
 Route::controller(DefaultController::class)->group(function () {
     Route::get('/get-category', 'GetCategory')->name('get-category');
     Route::get('/get-product', 'GetProduct')->name('get-product');
+
+});
+
+ // Manage Invoice All Route 
+Route::controller(InvoiceController::class)->group(function () {
+    Route::get('/all/invoice', 'AllInvoice')->name('all.invoice');
+
 
 });
 
