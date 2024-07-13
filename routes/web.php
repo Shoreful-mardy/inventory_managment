@@ -117,6 +117,7 @@ Route::controller(DefaultController::class)->group(function () {
  // Manage Invoice All Route 
 Route::controller(InvoiceController::class)->group(function () {
     Route::get('/all/invoice', 'AllInvoice')->name('all.invoice');
+    Route::get('/add/invoice', 'AddInvoice')->name('add.invoice');
 
 
 });

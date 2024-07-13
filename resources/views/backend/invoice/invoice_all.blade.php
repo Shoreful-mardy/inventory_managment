@@ -22,7 +22,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                	<a href="{{ route('add.purchase') }}" class="btn btn-dark btn-rounded waves-effect waves-light" style=" float: right;"> <i class="fas fa-plus-circle"> Add Invoice</i></a> <br><br>
+                	<a href="{{ route('add.invoice') }}" class="btn btn-dark btn-rounded waves-effect waves-light" style=" float: right;"> <i class="fas fa-plus-circle"> Add Invoice</i></a> <br><br>
 
                     <h4 class="card-title">All Invoice Data </h4>
                     
