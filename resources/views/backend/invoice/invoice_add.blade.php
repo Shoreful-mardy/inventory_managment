@@ -15,7 +15,7 @@
                 <div class="col-md-1">
                     <div class="mb-3">
                     <label for="example-text-input">Inv No</label>
-                    <input class="form-control example-date-input" name="invoice_no" type="text"  id="invoice_no" readonly style="background-color:#ddd;">
+                    <input class="form-control example-date-input" name="invoice_no" value="{{$invoice_no}}" type="text"  id="invoice_no" readonly style="background-color:#ddd;">
                     </div>
                 </div>
             
@@ -26,7 +26,7 @@
                 <div class="col-md-2">
                     <div class="mb-3">
                     <label for="example-text-input">Date</label>
-                    <input class="form-control example-date-input" name="date" type="date"  id="date">
+                    <input class="form-control example-date-input" name="date" type="date" value="{{ $date }}" id="date">
                     </div>
                 </div>
 
