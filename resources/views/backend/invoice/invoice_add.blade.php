@@ -127,8 +127,6 @@
 
 
 <script type="text/javascript">
-    
-
     $(function(){
     	$(document).on('change', '#category_id',function() {
     		var category_id = $(this).val();
@@ -149,6 +147,23 @@
     });
     
 </script>
+
+<script type="text/javascript">
+    $(function(){
+        $(document).on('change', '#product_id',function() {
+            var product_id = $(this).val();
+            $.ajax({
+                url:"{{ route('check-product-stock') }}",
+                type: "GET",
+                data:{product_id:product_id},
+                success:function(data){
+                    $('#current_stock_qty').val(data);
+                }
+            })
+        });
+    });
+    
+ </script>
 
 <script id="document-template" type="text/x-handlebars-template">
      
