@@ -76,7 +76,7 @@
     				<tr>
     					<th>Category</th>
     					<th>Product Name</th>
-    					<th>Unit</th>
+    					<th>PCS/Kg</th>
     					<th>Unit Price</th>
     					<th>Description</th>
     					<th>Totel Price</th>
@@ -102,7 +102,7 @@
     		<br>
 
     		<div class="form-group">
-    			<button type="sumit" class="btn btn-info" id="storeButton">Purchase Store</button>
+    			<button type="submit" class="btn btn-info" id="storeButton">Purchase Store</button>
     		</div>
 
     	</form>

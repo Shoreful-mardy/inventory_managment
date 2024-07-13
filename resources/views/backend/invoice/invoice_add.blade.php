@@ -81,11 +81,10 @@
     				<tr>
     					<th>Category</th>
     					<th>Product Name</th>
-    					<th>Unit</th>
-    					<th>Unit Price</th>
-    					<th>Description</th>
-    					<th>Totel Price</th>
-    					<th>Action</th>
+    					<th width="7%">Pcs/Kg</th>
+    					<th width="10%">Unit Price</th>
+    					<th width="15%">Totel Price</th>
+    					<th width="7%">Action</th>
     				</tr>
     			</thead>
     			<tbody id="addRow" class="addRow">
@@ -94,7 +93,7 @@
     			</tbody>
     			<tbody id="addRow" class="addRow">
     				<tr>
-    					<td colspan="5"></td>
+    					<td colspan="4"></td>
     					<td>
     						<input type="text" name="estimated_amount" value="0" id="estimated_amount" class="form-control estimated_amount" readonly style="background-color: #ddd;">
     					</td>
@@ -107,7 +106,7 @@
     		<br>
 
     		<div class="form-group">
-    			<button type="sumit" class="btn btn-info" id="storeButton">Purchase Store</button>
+    			<button type="submit" class="btn btn-info" id="storeButton">Invoice Store</button>
     		</div>
 
     	</form>
@@ -168,7 +167,7 @@
 <script id="document-template" type="text/x-handlebars-template">
      
 <tr class="delete_add_more_item" id="delete_add_more_item">
-        <input type="hidden" name="date[]" value="@{{date}}">
+        <input type="hidden" name="date" value="@{{date}}">
         <input type="hidden" name="parchase_no[]" value="@{{parchase_no}}">
         <input type="hidden" name="supplier_id[]" value="@{{supplier_id}}">
    
