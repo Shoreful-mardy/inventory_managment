@@ -21,7 +21,8 @@ class InvoiceController extends Controller
 {
 
     public function AllInvoice(){
-
+        $allData = Invoice::orderBy('date','desc')->orderBy('id','desc')->get();
+        return view('backend.invoice.invoice_all',compact('allData'));
     }//End Method
 
 
