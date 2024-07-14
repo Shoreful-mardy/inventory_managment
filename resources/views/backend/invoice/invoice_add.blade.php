@@ -131,8 +131,34 @@
 
                     <input type="text" name="paid_amount" class="form-control paid_amount" placeholder="Enter Paid Amount" style="display: none;">
                 </div>
-            </div><br>
 
+                <div class="form-group col-md-9">
+                    <label>Customer Name</label>
+                    <select name="customer_id" id="customer_id" class="form-select">
+                        <option value="">Select Customer</option>
+                        @foreach($customer as $cust)
+                        <option value="{{$cust->id}}">{{$cust->name}} - {{$cust->mobile_no}}</option>
+                        @endforeach
+
+                        <option value="0">New Customer</option>
+
+                    </select>
+                </div>
+            </div><br>
+            <!-- End Row -->
+<!-- Add Customer Form Start -->
+            <div class="row new_customer" style="display:none;">
+                <div class="form-group col-md-4">
+                    <input type="text" name="name" id="name" class="form-control" placeholder="Write Customer Name">
+                </div>
+                <div class="form-group col-md-4">
+                    <input type="text" name="mobile_no" id="mobile_no" class="form-control" placeholder="Write Customer Mobile No">
+                </div>
+                <div class="form-group col-md-4">
+                    <input type="email" name="email" id="email" class="form-control" placeholder="Write Customer Email">
+                </div>
+            </div><br>
+<!-- Add Customer Form End -->
     		<div class="form-group">
     			<button type="submit" class="btn btn-info" id="storeButton">Invoice Store</button>
     		</div>
@@ -320,7 +346,18 @@
         }else{
             $('.paid_amount').hide();
         }
-    })
+    });
+
+    $(document).on('change','#customer_id', function(){
+        var customer_id = $(this).val();
+        if (customer_id == "0") {
+            $('.new_customer').show();
+        }else{
+            $('.new_customer').hide();
+        }
+    });
 </script>
+
+
 
 @endsection 
