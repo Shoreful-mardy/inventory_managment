@@ -22,7 +22,7 @@ class InvoiceController extends Controller
 {
 
     public function AllInvoice(){
-        $allData = Invoice::orderBy('date','desc')->orderBy('id','desc')->get();
+        $allData = Invoice::orderBy('date','desc')->orderBy('id','desc')->where('status',1)->get();
         return view('backend.invoice.invoice_all',compact('allData'));
     }//End Method
 
@@ -134,6 +134,11 @@ class InvoiceController extends Controller
             'alert-type' => 'success'
             );
         return redirect()->route('all.invoice')->with($notification);
+    }//End Method
+
+    public function PendingInvoice(){
+        $allData = Invoice::orderBy('date','desc')->orderBy('id','desc')->where('status','0')->get();
+        return view('backend.invoice.pending_invoice_all',compact('allData'));
     }//End Method
 
 

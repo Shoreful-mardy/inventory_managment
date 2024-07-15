@@ -120,6 +120,7 @@ Route::controller(InvoiceController::class)->group(function () {
     Route::get('/all/invoice', 'AllInvoice')->name('all.invoice');
     Route::get('/add/invoice', 'AddInvoice')->name('add.invoice');
     Route::post('/invoice/store', 'StoreInvoice')->name('invoice.store');
+    Route::get('/pending/invoice', 'PendingInvoice')->name('pending.invoice');
 
 
 });

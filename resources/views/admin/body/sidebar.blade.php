@@ -93,7 +93,7 @@
                     <ul class="sub-menu" aria-expanded="false">
                         <li><a href="{{ route('all.invoice')}}">All Invoice</a></li>
                         <li><a href="{{ route('add.invoice')}}">Add Invoice</a></li>
-                        <li><a href="{{ route('pending.purchase')}}">Approval Invoice</a></li>
+                        <li><a href="{{ route('pending.invoice')}}">Pending Invoice</a></li>
                     </ul>
                 </li>
 
