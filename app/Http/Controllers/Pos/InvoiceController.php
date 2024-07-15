@@ -158,6 +158,14 @@ class InvoiceController extends Controller
     }//End Method
 
 
+    public function ApproveInvoice($id){
+
+        $invoice = Invoice::findOrFail($id);
+        return view('backend.invoice.invoice_approve',compact('invoice'));
+
+    }//End Method
+
+
 
 
 
