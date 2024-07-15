@@ -133,12 +133,28 @@ class InvoiceController extends Controller
             'message' => 'Invoice Data Inserted Successfully', 
             'alert-type' => 'success'
             );
-        return redirect()->route('all.invoice')->with($notification);
+        return redirect()->route('pending.invoice')->with($notification);
     }//End Method
 
     public function PendingInvoice(){
         $allData = Invoice::orderBy('date','desc')->orderBy('id','desc')->where('status','0')->get();
         return view('backend.invoice.pending_invoice_all',compact('allData'));
+    }//End Method
+
+    public function DeleteInvoice($id){
+
+        $invoice = Invoice::findOrFail($id);
+        $invoice->delete();
+        Invoicedetail::where('invoice_id',$invoice->id)->delete();
+        Payment::where('invoice_id',$invoice->id)->delete();
+        PaymentDetail::where('invoice_id',$invoice->id)->delete();
+
+        $notification = array(
+            'message' => 'Invoice Data Delete Successfully', 
+            'alert-type' => 'success'
+            );
+        return redirect()->back()->with($notification);
+
     }//End Method
 
 
