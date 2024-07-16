@@ -203,6 +203,13 @@ class InvoiceController extends Controller
 
 
 
+    public function PrintInvoice(){
+        $allData = Invoice::orderBy('date','desc')->orderBy('id','desc')->where('status',1)->get();
+        return view('backend.invoice.print_invoice_list',compact('allData'));
+    }//End Method
+
+
+
 
 
 

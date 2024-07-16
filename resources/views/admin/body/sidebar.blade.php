@@ -94,6 +94,7 @@
                         <li><a href="{{ route('all.invoice')}}">All Invoice</a></li>
                         <li><a href="{{ route('add.invoice')}}">Add Invoice</a></li>
                         <li><a href="{{ route('pending.invoice')}}">Pending Invoice</a></li>
+                        <li><a href="{{ route('print.invoice.list')}}">Print Invoice List</a></li>
                     </ul>
                 </li>
 

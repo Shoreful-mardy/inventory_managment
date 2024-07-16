@@ -124,6 +124,7 @@ Route::controller(InvoiceController::class)->group(function () {
     Route::get('/delete/invoice/{id}', 'DeleteInvoice')->name('delete.invoice');
     Route::get('/approve/invoice/{id}', 'ApproveInvoice')->name('invoice.approve');
     Route::post('/approval/store/{id}', 'ApproveIStore')->name('approval.store');
+    Route::get('/print/invoice/', 'PrintInvoice')->name('print.invoice.list');
 
 
 });
