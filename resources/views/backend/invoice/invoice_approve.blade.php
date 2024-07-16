@@ -43,7 +43,7 @@
                 
             </table>
 
-            <form method="post" action="">
+            <form method="post" action="{{ route('approval.store',$invoice->id) }}">
                 @csrf
                 <table border="1" class="table table-dark" width="100%">
                     <thead>
@@ -64,6 +64,11 @@
                         @endphp
                         @foreach($invoice['invoice_details'] as $key => $details)
                         <tr>
+                            <input type="hidden" name="category_id[]" value="{{ $details->category_id}}">
+                            <input type="hidden" name="product_id[]" value="{{ $details->product_id}}">
+                            <input type="hidden" name="selling_qty[{{$details->id}}]" value="{{ $details->selling_qty}}">
+
+
                             <td class="text-center">{{ $key+1}}</td>
                             <td class="text-center">{{ $details['category']['name'] }}</td>
                             <td class="text-center">{{ $details['product']['name'] }}</td>
@@ -93,7 +98,7 @@
                             <td>${{ $payment->due_amount}}</td>
                         </tr>
                         <tr>
-                            <td colspan="6">Gran Total</td>
+                            <td colspan="6">Grand Total</td>
                             <td>${{ $payment->total_amount}}</td>
                         </tr>
                     </tbody>

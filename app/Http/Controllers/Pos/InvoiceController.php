@@ -165,6 +165,42 @@ class InvoiceController extends Controller
 
     }//End Method
 
+    public function ApproveIStore(Request $request,$id){
+
+        foreach ($request->selling_qty as $key => $val) {
+            $invoice_details = Invoicedetail::where('id',$key)->first();
+            $product = Product::where('id',$invoice_details->product_id)->first();
+            if ($product->quantity < $request->selling_qty[$key]) {
+                $notification = array(
+                    'message' => 'Sorry Your Approval Invoice Out Of Stock', 
+                    'alert-type' => 'error'
+                    );
+                return redirect()->back()->with($notification);
+            }
+        }//End Foreach
+
+        $invoice = Invoice::findOrFail($id);
+        $invoice->updated_by = Auth::user()->id;
+        $invoice->status = '1';
+
+        DB::transaction(function() use($request,$invoice,$id){
+            foreach ($request->selling_qty as $key => $val) {
+                $invoice_details = Invoicedetail::where('id',$key)->first();
+                $product = Product::where('id',$invoice_details->product_id)->first(); 
+
+                $product->quantity = ((float)$product->quantity) - ((float)$request->selling_qty[$key]);
+                $product->save();
+            }//end foreach
+            $invoice->save();
+        });
+        $notification = array(
+            'message' => 'Invoice Approved Successfully', 
+            'alert-type' => 'success'
+            );
+        return redirect()->route('pending.invoice')->with($notification);
+
+    }//End Method
+
 
 
 
