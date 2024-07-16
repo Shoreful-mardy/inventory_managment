@@ -216,6 +216,12 @@ class InvoiceController extends Controller
 
     }//End Method
 
+    public function DailyInvoiceReport(){
+
+        return view('backend.invoice.daily_invoice_report');
+
+    }//End Method
+
 
 
 

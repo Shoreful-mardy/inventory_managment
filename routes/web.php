@@ -126,6 +126,7 @@ Route::controller(InvoiceController::class)->group(function () {
     Route::post('/approval/store/{id}', 'ApproveIStore')->name('approval.store');
     Route::get('/print/invoice/', 'PrintInvoice')->name('print.invoice.list');
     Route::get('/invoice/print/{id}', 'InvoicePrint')->name('invoice.print');
+    Route::get('/daily/invoice/report', 'DailyInvoiceReport')->name('daily.invoice.report');
 
 
 
