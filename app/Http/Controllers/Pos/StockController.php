@@ -31,6 +31,14 @@ class StockController extends Controller
 
     }//End Method
 
+    public function StockReportSupplierWise(){
+
+        $suppliers = Supplier::all();
+        $category = Category::all();
+        return view('backend.stock.stock_report_supplier_wise',compact('suppliers','category'));   
+
+    }//End Method
+
 
 
 
