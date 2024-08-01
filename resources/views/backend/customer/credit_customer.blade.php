@@ -22,7 +22,7 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                	<a href="{{ route('add.customer') }}" class="btn btn-dark btn-rounded waves-effect waves-light" style=" float: right;">Print Credit Customers</a> <br><br>
+                	<a href="{{ route('credit.customer.print.pdf') }}" class="btn btn-dark btn-rounded waves-effect waves-light" target="_blank" style=" float: right;"> <i class="fa fa-print"></i> Print Credit Customers</a> <br><br>
 
                     <h4 class="card-title">Credit Customers Data </h4>
                     
