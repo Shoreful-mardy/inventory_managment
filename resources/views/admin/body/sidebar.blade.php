@@ -82,6 +82,7 @@
                         <li><a href="{{ route('all.purchase')}}">All Purchase</a></li>
                         <li><a href="{{ route('add.purchase')}}">Add Purchase</a></li>
                         <li><a href="{{ route('pending.purchase')}}">Approval Purchase</a></li>
+                        <li><a href="{{ route('daily.purchase.report')}}">Daily Purchase Report</a></li>
                     </ul>
                 </li>
 

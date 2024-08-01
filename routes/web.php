@@ -106,6 +106,11 @@ Route::controller(PurchaseController::class)->group(function () {
     Route::get('/approve/purchase/{id}', 'ApprovePurchase')->name('approve.purchase');
 
 
+
+    Route::get('/daily/purchase/report', 'DailyPurchaseReport')->name('daily.purchase.report');
+    Route::get('/daily/purchase/pdf', 'DailyPurchasePdf')->name('daily.purchase.pdf');
+
+
 });
 
 // Default All Route 
