@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Pos;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Customer;
+use App\Models\Payment;
 use Auth;
 use Carbon\Carbon;
 use Image;
@@ -111,6 +112,14 @@ class CustomerController extends Controller
         );
         return redirect()->route('all.customer')->with($notification);
 
+
+    }//End Method
+
+
+    public function CreditCustomer(){
+
+        $allData = Payment::whereIn('paid_status',['full_due','partial_paid'])->get();
+        return view('backend.customer.credit_customer',compact('allData'));
 
     }//End Method
 

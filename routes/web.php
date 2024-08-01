@@ -61,6 +61,9 @@ Route::middleware('auth')->group(function(){
         Route::get('/edit/customer/{id}', 'EditCustomer')->name('edit.customer');
         Route::post('/update/customer', 'UpdateCustomer')->name('update.customer');
         Route::get('/delete/customer/{id}', 'DeleteCustomer')->name('delete.customer');
+
+
+        Route::get('/credit/customer', 'CreditCustomer')->name('credit.customer');
          
     });
 
