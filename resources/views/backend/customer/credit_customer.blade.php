@@ -53,7 +53,7 @@
                             <td>
    <a href="{{ route('edit.customer.invoice',$item->invoice_id ) }}" class="btn btn-info sm" title="Edit Data">  <i class="fas fa-edit"></i> </a>
 
-     <a href="{{ route('delete.customer',$item->id ) }}" class="btn btn-danger sm" title="Customer Invoice Details" >  <i class="fas fa-eye"></i> </a>
+     <a href="{{ route('customer.invoice.details.pdf',$item->invoice_id ) }}" class="btn btn-danger sm" title="Customer Invoice Details" >  <i class="fas fa-eye"></i> </a>
 
                             </td>
                            

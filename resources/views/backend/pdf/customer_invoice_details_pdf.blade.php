@@ -7,12 +7,12 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                    <h4 class="mb-sm-0">Invoice</h4>
+                    <h4 class="mb-sm-0">Customer Payment Report</h4>
 
                     <div class="page-title-right">
                         <ol class="breadcrumb m-0">
                             <li class="breadcrumb-item"><a href="javascript: void(0);"></a></li>
-                            <li class="breadcrumb-item active">Invoice</li>
+                            <li class="breadcrumb-item active">Payment Report</li>
                         </ol>
                     </div>
 
@@ -29,7 +29,7 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="invoice-title">
-                                    <h4 class="float-end font-size-16"><strong>Invoice No #{{$invoice->invoice_no}}</strong></h4>
+                                    <h4 class="float-end font-size-16"><strong>Invoice No #{{$payment['invoice']['invoice_no']}}</strong></h4>
                                     <h3>
                                         <img src="{{ asset('backend/assets/images/logo-sm.png')}}" alt="logo" height="24"/> Easy Shop
                                     </h3>
@@ -46,21 +46,15 @@
                                     <div class="col-6 mt-4 text-end">
                                         <address>
                                             <strong>Order Date:</strong><br>
-                                            {{date('M d, Y', strtotime($invoice->created_at))}}<br><br>
+                                            {{date('M d, Y', strtotime($payment['invoice']['date']))}}<br><br>
                                         </address>
                                     </div>
                                 </div>
                             </div>
                         </div>
-@php
-    $payment = App\Models\Payment::where('invoice_id',$invoice->id)->first();
- @endphp  
     <div class="row">
         <div class="col-12">
             <div>
-                <div class="p-2">
-                    <h3 class="font-size-16"><strong>Customer Invoice</strong></h3>
-                </div>
                 <div class="">
                     <div class="table-responsive">
                         <table class="table">
@@ -70,7 +64,6 @@
                                 <td class="text-center"><strong>Customer Mobile</strong></td>
                                 <td class="text-center"><strong>Customer Email</strong>
                                 </td>
-                                <td class="text-end"><strong>Description</strong></td>
                             </tr>
                             </thead>
                             <tbody>
@@ -79,7 +72,6 @@
                                 <td>{{$payment['customer']['name']}}</td>
                                 <td class="text-center">{{$payment['customer']['mobile_no']}}</td>
                                 <td class="text-center">{{$payment['customer']['email']}}</td>
-                                <td class="text-end">{{$invoice->description}}</td>
                             </tr>
                             </tbody>
                         </table>
@@ -105,21 +97,25 @@
                                 <td class="text-center"><strong>Category</strong></td>
                                 <td class="text-center"><strong>Product Name</strong>
                                 </td>
+                                <td class="text-center"><strong>Current Stock</strong></td>
                                 <td class="text-center"><strong>Quantity</strong></td>
                                 <td class="text-center"><strong>Unit Price</strong></td>
                                 <td class="text-center"><strong>Total Price</strong></td>
                             </tr>
                             </thead>
                             <tbody>
-                            @php
+                       @php
                             $total_sum = 0;
 
+                            $invoice_details = App\Models\Invoicedetail::where('invoice_id',$payment->invoice_id)->get();
+
                         @endphp
-                        @foreach($invoice['invoice_details'] as $key => $details)
+                        @foreach($invoice_details as $key => $details)
                             <tr>
                             <td class="text-center">{{ $key+1}}</td>
                             <td class="text-center">{{ $details['category']['name'] }}</td>
                             <td class="text-center">{{ $details['product']['name'] }}</td>
+                            <td class="text-center">{{ $details['product']['quantity'] }}</td>
                             <td class="text-center">{{ $details->selling_qty }}</td>
                             <td class="text-center">${{ $details->unit_price }}</td>
                             <td class="text-center">${{ $details->selling_price }}</td>

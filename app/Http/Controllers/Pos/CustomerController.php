@@ -176,6 +176,13 @@ class CustomerController extends Controller
 
     }//End Method
 
+    public function CustomerInvoiceDetailsPdf($invoice_id){
+
+        $payment = Payment::where('invoice_id',$invoice_id)->first();
+        return view('backend.pdf.customer_invoice_details_pdf',compact('payment'));
+
+    }//End Method
+
 
 
 
