@@ -66,6 +66,7 @@ Route::middleware('auth')->group(function(){
         Route::get('/credit/customer', 'CreditCustomer')->name('credit.customer');
         Route::get('/credit/customer/print/pdf', 'CreditCustomerPrintPdf')->name('credit.customer.print.pdf');
         Route::get('/edit/customer/invoice/{invoice_id}', 'EditCustomerInvoice')->name('edit.customer.invoice');
+        Route::post('/edit/update/invoice/{invoice_id}', 'UpdateCustomerInvoice')->name('customer.update.invoice');
          
     });
 
