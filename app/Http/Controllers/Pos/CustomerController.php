@@ -128,6 +128,13 @@ class CustomerController extends Controller
         return view('backend.pdf.credit_customer_pdf',compact('allData'));
     }//End Method
 
+    public function EditCustomerInvoice($invoice_id){
+
+        $payment = Payment::where('invoice_id',$invoice_id)->first();
+        return view('backend.customer.edit_customer_invoice',compact('payment'));
+
+    }//End Method
+
 
 
 
