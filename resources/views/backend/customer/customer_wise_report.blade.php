@@ -8,7 +8,7 @@
     <div class="row">
         <div class="col-12">
             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                <h4 class="mb-sm-0">Customer Wise Stock Report</h4>
+                <h4 class="mb-sm-0">Customer Wise Report</h4>
             </div>
         </div>
     </div>
@@ -28,7 +28,7 @@
                     </div><!-- end row -->
                     <!-- Customer creadit Wise Report Start -->
                     <div class="show_credit" style="display: none;">
-                       <form method="GET" action="{{ route('supplier.wise.pdf') }}" id="myForm" target="_blank">
+                       <form method="GET" action="{{ route('customer.wise.credit.report') }}" id="myForm" target="_blank">
                         <div class="row">
                             <div class="col-sm-8 form-group">
                                <label>Customer Name</label>
