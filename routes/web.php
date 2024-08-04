@@ -70,6 +70,12 @@ Route::middleware('auth')->group(function(){
 
         Route::get('/customer/invoice/details/pdf/{invoice_id}', 'CustomerInvoiceDetailsPdf')->name('customer.invoice.details.pdf');
          
+
+
+
+        Route::get('/paid/customer', 'PaidCustomer')->name('paid.customer');
+
+
     });
 
      // Manage Units All Route 
