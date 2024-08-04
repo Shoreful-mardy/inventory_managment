@@ -39,6 +39,7 @@
                         <li><a href="{{ route('all.customer')}}">Add Customers</a></li>
                         <li><a href="{{ route('credit.customer')}}">Credit Customers</a></li>
                         <li><a href="{{ route('paid.customer')}}">Paid Customers</a></li>
+                        <li><a href="{{ route('customer.wise.report')}}">Customer wise Report</a></li>
                     </ul>
                 </li>
  

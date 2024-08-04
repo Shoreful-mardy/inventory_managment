@@ -199,6 +199,13 @@ class CustomerController extends Controller
     }//End Method
 
 
+    public function CustomerWiseReport(){
+        $customer = Customer::all();
+        return view('backend.customer.customer_wise_report',compact('customer'));
+
+    }//End Method
+
+
 
 
 
